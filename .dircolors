@@ -7,6 +7,7 @@
 # slackware version of dircolors) are recognized but ignored.
 # Below are TERM entries, which can be a glob patterns, to match
 # against the TERM environment variable to determine if it is colorizable.
+
 TERM Eterm
 TERM ansi
 TERM *color*
@@ -31,174 +32,189 @@ TERM terminator
 TERM tmux*
 TERM vt100
 TERM xterm*
-# Below are the color init strings for the basic file types.
-# One can use codes for 256 or more colors supported by modern terminals.
-# The default color codes use the capabilities of an 8 color terminal
-# with some additional attributes as per the following codes:
+
+    # Below are the color init strings for the basic file types.
+    # One can use codes for 256 or more colors supported by modern terminals.
+    # The default color codes use the capabilities of an 8 color terminal
+    # with some additional attributes as per the following codes:
+
 # Attribute codes:
 # 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+
 # Text color codes:
-# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white(gray)
+# 90=Dark grey 91=Light red 92=Light green 93=Yellow 94=Light blue 95=Light purple 96=Turquoise 97=White 
+
 # Background color codes:
-# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white 100=Dark grey 101=Light red  
+# 102=Light green 103=Yellow 104=Light blue 105=Light purple 106=Turquoise 107=White  
 
-NORMAL  01;40 # no color code at all
-FILE  01;40 # regular file: use no color at all
-RESET 0 # reset to "normal" color
-DIR 01;40;34 # directory
-LINK 01;40;36 # symbolic link. (If you set this to 'target' instead of a
+RESET 0 			    #old key= rs
+NORMAL 01;40 			#old key= no
+FILE 01;40 			    #old key= fi
+DIR 01;40;34 			#old key= di
+LINK 01;40;36 			#old key= ln
 
- # numerical value, the color is as for the file pointed to.)
-MULTIHARDLINK  01;40 # regular file with more than one link
-FIFO 40;33 # pipe
-SOCK 01;40;35 # socket
-DOOR 01;40;35 # door
-BLK 40;33;01 # block device driver
-CHR 40;33;01 # character device driver
-ORPHAN 40;5;31 # symlink to nonexistent file, or non-statable file
-MISSING  40;5;31 # ... and the files they point to
-SETUID 40;97 # file that is setuid (u+s)
-SETGID 40;97 # file that is setgid (g+s)
-CAPABILITY 30;41 # file with capability
-STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE 34;42 # dir that is other-writable (o+w) and not sticky
-STICKY 37;44 # dir with the sticky bit set (+t) and not other-writable
+MULTIHARDLINK 01;40 	#old key= mh
+FIFO 01;40;33 			#old key= pi
+SOCK 01;40;35 			#old key= so
+DOOR 01;40;35 			#old key= do
+BLK 40;33;01 			#old key= bd
+CHR 40;33;01 			#old key= cd
+ORPHAN 40;5;31 			#old key= or
+MISSING 40;5;31 		#old key= mi
+SETUID 01;40;97 			#old key= su
+SETGID 01;40;97 			#old key= sg
+CAPABILITY 01;30;41 			    #old key= ca
+STICKY_OTHER_WRITABLE 01;37;44 	    #old key= tw
+OTHER_WRITABLE 01;34;42 			#old key= ow
+STICKY 01;37;44 			        #old key= st
+EXEC 01;40;32                       #old key= ex ,for files with execute permission
 
-# This is for files with execute permission:
-EXEC 01;40;32
+#LEFTCODE, LEFT				#old key= lc ,think this is \e[0m
+#RIGHTCODE, RIGHT			#old key= rc
+#ENDCODE, END	    		#old key= ec
 
-# List any file extensions like '.gz' or '.tar' that you would like ls
-# to colorize below. Put the extension, a space, and the color init string.
-# (and any comments you want to add after a '#')
-# If you use DOS-style suffixes, you may want to uncomment the following:
-.cmd 01;40;32 # executables (bright green)
-.exe 01;40;32
-.com 01;40;32
-.btm 01;40;32
-.bat 01;40;32
 
-# Or if you want to colorize scripts even if they do not have the
-# executable bit actually set.
-.sh 01;40;32
-.csh 01;40;32
+               # archives or compressed
+.TAR 40;01;31
+.TGZ 40;01;31
+.ARC 40;01;31
+.ARJ 40;01;31
+.TAZ 40;01;31
+.LHA 40;01;31
+.LZ4 40;01;31
+.LZH 40;01;31
+.LZMA 40;01;31
+.TLZ 40;01;31
+.TXZ 40;01;31
+.TZO 40;01;31
+.T7Z 40;01;31
+.ZIP 40;01;31
+.Z 40;01;31
+.DZ 40;01;31
+.GZ 40;01;31
+.LRZ 40;01;31
+.LZ 40;01;31
+.LZO 40;01;31
+.XZ 40;01;31
+.ZST 40;01;31
+.TZST 40;01;31
+.BZ2 40;01;31
+.BZ 40;01;31
+.TBZ 40;01;31
+.TBZ2 40;01;31
+.TZ 40;01;31
+.DEB 40;01;31
+.RPM 40;01;31
+.JAR 40;01;31
+.WAR 40;01;31
+.EAR 40;01;31
+.SAR 40;01;31
+.RAR 40;01;31
+.ALZ 40;01;31
+.ACE 40;01;31
+.ZOO 40;01;31
+.CPIO 40;01;31
+7Z 40;01;31
+.RZ 40;01;31
+.CAB 40;01;31
+.WIM 40;01;31
+.SWM 40;01;31
+.DWM 40;01;31
+.ESD 40;01;31
+                    # image formats
+.JPG 40;01;35
+.JPEG 40;01;35
+.MJPG 40;01;35
+.MJPEG 40;01;35
+.GIF 40;01;35
+.BMP 40;01;35
+.PBM 40;01;35
+.PGM 40;01;35
+.PPM 40;01;35
+.TGA 40;01;35
+.XBM 40;01;35
+.XPM 40;01;35
+.TIF 40;01;35
+.TIFF 40;01;35
+.PNG 40;01;35
+.SVG 40;01;35
+.SVGZ 40;01;35
+.MNG 40;01;35
+.PCX 40;01;35
+.MOV 40;01;35
+.MPG 40;01;35
+.MPEG 40;01;35
+.M2V 40;01;35
+.MKV 40;01;35
+.WEBM 40;01;35
+.WEBP 40;01;35
+.OGM 40;01;35
+.MP4 40;01;35
+.M4V 40;01;35
+.MP4V 40;01;35
+.VOB 40;01;35
+.QT 40;01;35
+.NUV 40;01;35
+.WMV 40;01;35
+.ASF 40;01;35
+.RM 40;01;35
+.RMVB 40;01;35
+.FLC 40;01;35
+.AVI 40;01;35
+.FLI 40;01;35
+.FLV 40;01;35
+.GL 40;01;35
+.DL 40;01;35
+.XCF 40;01;35
+.XWD 40;01;35
+.YUV 40;01;35
+.CGM 40;01;35
+.EMF 40;01;35
 
-# archives or compressed (bright red)
-.tar 01;40;31
-.tgz 01;40;31
-.arc 01;40;31
-.arj 01;40;31
-.taz 01;40;31
-.lha 01;40;31
-.lz4 01;40;31
-.lzh 01;40;31
-.lzma 01;40;31
-.tlz 01;40;31
-.txz 01;40;31
-.tzo 01;40;31
-.t7z 01;40;31
-.zip 01;40;31
-.z 01;40;31
-.dz 01;40;31
-.gz 01;40;31
-.lrz 01;40;31
-.lz 01;40;31
-.lzo 01;40;31
-.xz 01;40;31
-.zst 01;40;31
-.tzst 01;40;31
-.bz2 01;40;31
-.bz 01;40;31
-.tbz 01;40;31
-.tbz2 01;40;31
-.tz 01;40;31
-.deb 01;40;31
-.rpm 01;40;31
-.jar 01;40;31
-.war 01;40;31
-.ear 01;40;31
-.sar 01;40;31
-.rar 01;40;31
-.alz 01;40;31
-.ace 01;40;31
-.zoo 01;40;31
-.cpio 01;40;31
-.7z 01;40;31
-.rz 01;40;31
-.cab 01;40;31
-.wim 01;40;31
-.swm 01;40;31
-.dwm 01;40;31
-.esd 01;40;31
-      # image formats
-.jpg 01;40;35
-.jpeg 01;40;35
-.mjpg 01;40;35
-.mjpeg 01;40;35
-.gif 01;40;35
-.bmp 01;40;35
-.pbm 01;40;35
-.pgm 01;40;35
-.ppm 01;40;35
-.tga 01;40;35
-.xbm 01;40;35
-.xpm 01;40;35
-.tif 01;40;35
-.tiff 01;40;35
-.png 01;40;35
-.svg 01;40;35
-.svgz 01;40;35
-.mng 01;40;35
-.pcx 01;40;35
-.mov 01;40;35
-.mpg 01;40;35
-.mpeg 01;40;35
-.m2v 01;40;35
-.mkv 01;40;35
-.webm 01;40;35
-.webp 01;40;35
-.ogm 01;40;35
-.mp4 01;40;35
-.m4v 01;40;35
-.mp4v 01;40;35
-.vob 01;40;35
-.qt 01;40;35
-.nuv 01;40;35
-.wmv 01;40;35
-.asf 01;40;35
-.rm 01;40;35
-.rmvb 01;40;35
-.flc 01;40;35
-.avi 01;40;35
-.fli 01;40;35
-.flv 01;40;35
-.gl 01;40;35
-.dl 01;40;35
-.xcf 01;40;35
-.xwd 01;40;35
-.yuv 01;40;35
-.cgm 01;40;35
-.emf 01;40;35
+                    # https://wiki.xiph.org/MIME_Types_and_File_Extensions
+.OGV 40;01;35       
+.OGX 40;01;35       
 
-# https://wiki.xiph.org/MIME_Types_and_File_Extensions
-.ogv 01;40;35
-.ogx 01;40;35
+                    # audio formats
+.AAC 40;01;36
+.AU 40;01;36
+.FLAC 40;01;36
+.M4A 40;01;36
+.MID 40;01;36
+.MIDI 40;01;36
+.MKA 40;01;36
+.MP3 40;01;36
+.MPC 40;01;36
+.OGG 40;01;36
+.RA 40;01;36
+.WAV 40;01;36
+.AIF 40;01;36
+.CDA 40;01;36
+.MPA 40;01;36
+                    # Various disk and virtual media
+.bin 40;01;36
+.dmg 40;01;36
+.iso 40;01;36
+.toast 40;01;36
+.vcd 40;01;36
 
-# audio formats
-.aac  01;40;36
-.au  01;40;36
-.flac  01;40;36
-.m4a  01;40;36
-.mid  01;40;36
-.midi  01;40;36
-.mka  01;40;36
-.mp3  01;40;36
-.mpc  01;40;36
-.ogg  01;40;36
-.ra  01;40;36
-.wav  01;40;36
+                    # https://wiki.xiph.org/MIME_Types_and_File_Extensions
+.OGA 40;01;36
+.OPUS 40;01;36
+.SPX 40;01;36
+.XSPF  40;01;36
+                    # Programming file extensions
 
-# https://wiki.xiph.org/MIME_Types_and_File_Extensions
-.oga  01;40;36
-.opus  01;40;36
-.spx  01;40;36
-.xspf 01;40;36
+.cmd 01;91;107		#worthless windows extensions
+.exe 01;91;107			
+.com 01;91;107			
+.btm 01;91;107			
+.bat 01;91;107			
+.sh 01;40;32		# NIX shell extensions
+.csh 01;40;32			
+.zhe 01;40;32			
+ 
+
+'
