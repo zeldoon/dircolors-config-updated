@@ -15,7 +15,9 @@
 + CONGRATS!
 
 ## More information on various installation options, modifications and what have you 
+So I use pop! os and my go-to shell is tilix in quake mode, super useful having a shell that will drop down in whatever workspace I am in but there was one issue: the shell has the transparency set so I can read through it but when I'm on a page with a white background it's very difficult to read the shell's text.
 
+This is where customizing the color values for everything came in handy. Instead of switching between two color profiles I decided to set the background on certain text
 
 
 #Rant and Information why th
