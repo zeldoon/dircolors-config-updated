@@ -8,18 +8,18 @@ I have put all the standard color codes in the config file for you and added a b
 > ***So I will provide instructions using the default path set in .bashrc and assume you just want to copy/paste the text from the config file versus cloning over a repository***
 
 + Open your terminal to create an empty config file in the proper location:
-> ```shell
-> touch $HOME/.dircolors && nano $HOME/.dircolors 
-> ```
+ ```shell
+ touch $HOME/.dircolors && nano $HOME/.dircolors 
+ ```
 + Now copy/paste the contents of the config file into nano then save 
 + Open up your terminal to view the changes.
 + CONGRATS!
 
 ### Easy method with curl
 + Open your terminal and use the following command to download the file to the correct location and name
-> ```shell
-> curl https://github.com/zeldoon/dircolors-config-updated/blob/d2e95ca75caf17318e13a81167e9c0cd0ff4e37c/.dircolors -o $HOME/.dircolors
-> ```
+ ```shell
+ curl https://github.com/zeldoon/dircolors-config-updated/blob/d2e95ca75caf17318e13a81167e9c0cd0ff4e37c/.dircolors -o $HOME/.dircolors
+ ```
 
 ## More information on various installation options, modifications and what have you 
 So I use pop! os and my go-to shell is tilix in quake mode, super useful having a shell that will drop down in whatever workspace I am in but there was one issue: the shell has the transparency set so I can read through it but when I'm on a page with a white background it's very difficult to read the shell's text as I have everything set up for dark mode.
